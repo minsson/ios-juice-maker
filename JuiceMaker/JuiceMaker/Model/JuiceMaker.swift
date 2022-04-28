@@ -8,7 +8,7 @@ struct JuiceMaker {
     private let store = FruitStore()
     
     func make(juice: Menu) throws {
-        let isPossible = try store.hasEnoughInventory(of: juice.recipe, in: store.fruitsInventory)
+        let isPossible = try store.hasEnoughInventory(of: juice.recipe)
 
         if isPossible {
             try store.reduceInventory(of: juice.recipe)

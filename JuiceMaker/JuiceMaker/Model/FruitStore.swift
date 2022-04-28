@@ -4,6 +4,8 @@
 //  Copyright © yagom academy. All rights reserved.
 //
 
+import Foundation
+
 class FruitStore {
     enum Fruit: CaseIterable {
          case strawberry
@@ -14,8 +16,9 @@ class FruitStore {
      }
 
      typealias FruitsInventory = [Fruit: Int]
-     var fruitsInventory: FruitsInventory = [:]
-
+     private var fruitsInventory: FruitsInventory = [:]
+    // 순수함수가 아님. 아닐 땐 스레드 문제 발생 가능 (프로젝트가 커지면)
+    // 웬만하면 다 private let으로.
      init(initialInventory:Int = 10) {
          Fruit.allCases.forEach { fruitsInventory[$0] = initialInventory }
      }
@@ -44,10 +47,10 @@ class FruitStore {
          }
      }
     
-    func hasEnoughInventory(of ingredient: FruitsInventory, in inventory: FruitsInventory) throws -> Bool {
+    func hasEnoughInventory(of ingredient: FruitsInventory) throws -> Bool {
         for fruit in ingredient.keys {
             let requiredIngredient = ingredient[fruit] ?? 0
-            let fruitInventory = inventory[fruit] ?? 0
+            let fruitInventory = self.fruitsInventory[fruit] ?? 0
             
             if fruitInventory >= requiredIngredient {
                 continue
