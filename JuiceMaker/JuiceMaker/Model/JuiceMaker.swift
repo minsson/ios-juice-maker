@@ -4,6 +4,7 @@
 //  Copyright © yagom academy. All rights reserved.
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 // 
 
 import Foundation
@@ -14,6 +15,10 @@ struct JuiceMaker {
 =======
 //
 struct JuiceMaker {
+=======
+//
+struct JuiceMaker {
+>>>>>>> Stashed changes
 =======
 //
 struct JuiceMaker {
