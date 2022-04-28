@@ -13,6 +13,9 @@
 		51C9E20F281A98E100EBBBBF /* JuiceMaker+Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C9E20E281A98E100EBBBBF /* JuiceMaker+Menu.swift */; };
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -35,6 +38,9 @@
 		51C9E20E281A98E100EBBBBF /* JuiceMaker+Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JuiceMaker+Menu.swift"; sourceTree = "<group>"; };
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -84,6 +90,9 @@
 				51C9E20E281A98E100EBBBBF /* JuiceMaker+Menu.swift */,
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
