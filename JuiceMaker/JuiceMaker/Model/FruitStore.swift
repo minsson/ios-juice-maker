@@ -55,8 +55,21 @@ class FruitStore {
         }
     }
     
+    func grabIngredients(of ingredient: FruitsInventory) -> FruitsInventory? {
+        for fruit in ingredient.keys {
+            let requiredIngredient = ingredient[fruit] ?? 0
+            let fruitInventory = self.fruitsInventory[fruit] ?? 0
+            
+            guard fruitInventory >= requiredIngredient else { return nil }
+        }
+        return ingredient
+    }
+    
+    
+    //============================================================================
+    
     // func hasEnoughInventory(of ingredient: FruitsInventory, in inventory: FruitsInventory) throws -> Bool {
-    func hasEnoughInventory(of ingredient: FruitsInventory) throws -> Bool {
+    func hasEnoughInventory_웨더_피드백_받은_메서드(of ingredient: FruitsInventory) throws -> Bool {
         for fruit in ingredient.keys {
             let requiredIngredient = ingredient[fruit] ?? 0
             //            let fruitInventory = inventory[fruit] ?? 0
@@ -71,12 +84,11 @@ class FruitStore {
         return true
     }
     
-    // 수정 전
-    func hasEnoughInventory(of ingredient: FruitsInventory, in inventory: FruitsInventory) throws -> Bool {
+    func hasEnoughInventory_웨더_피드백_받기_전(of ingredient: FruitsInventory, in inventory: FruitsInventory) throws -> Bool {
         for fruit in ingredient.keys {
             let requiredIngredient = ingredient[fruit] ?? 0
             let fruitInventory = inventory[fruit] ?? 0
-            
+
             if fruitInventory >= requiredIngredient {
                 continue
             } else {
