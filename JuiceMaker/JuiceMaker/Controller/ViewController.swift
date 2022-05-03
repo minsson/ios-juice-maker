@@ -64,32 +64,20 @@ class ViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func strawberryBananaJuiceOrderTapped(_ sender: UIButton) {
-        order(juice: .strawberryBananaJuice)
-    }
     
-    @IBAction func mangoKiwiJuiceOrderTapped(_ sender: UIButton) {
-        order(juice: .mangoKiwiJuice)
-    }
-    
-    @IBAction func strawberryJuiceOrderTapped(_ sender: UIButton) {
-        order(juice: .strawberryJuice)
-    }
-  
-    @IBAction func bananaJuiceOrderTapped(_ sender: UIButton) {
-        order(juice: .bananaJuice)
-    }
-    
-    @IBAction func pineappleJuiceOrderTapped(_ sender: UIButton) {
-        order(juice: .pineappleJuice)
-    }
-    
-    @IBAction func kiwiJuiceOrderTapped(_ sender: UIButton) {
-        order(juice: .kiwiJuice)
-    }
- 
-    @IBAction func mangoJuiceOrderTapped(_ sender: UIButton) {
-        order(juice: .mangoJuice)
+    @IBAction func juiceOrderButtonTapped(_ sender: UIButton) {
+        let selected = sender.currentTitle
+        
+        switch selected {
+        case "딸바쥬스 주문": order(juice: .strawberryBananaJuice)
+        case "망키쥬스 주문": order(juice: .mangoKiwiJuice)
+        case "딸기쥬스 주문": order(juice: .strawberryJuice)
+        case "바나나쥬스 주문": order(juice: .bananaJuice)
+        case "파인애플쥬스 주문": order(juice: .pineappleJuice)
+        case "키위쥬스 주문": order(juice: .kiwiJuice)
+        case "망고쥬스 주문": order(juice: .mangoJuice)
+        default: break
+        }
     }
 }
 

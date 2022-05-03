@@ -44,6 +44,15 @@ class FruitStore {
         }
     }
     
+    func addInventoryByOne(of fruit: Fruit) {
+        if let originalQuantity = fruitsInventory[fruit] {
+            fruitsInventory[fruit] =
+            originalQuantity + 1
+        }
+        print("이거 실행됨")
+        print(fruitsInventory)
+    }
+    
     func grabIngredients(of ingredient: FruitsInventory) -> FruitsInventory? {
         for fruit in ingredient.keys {
             let requiredIngredient = ingredient[fruit] ?? 0

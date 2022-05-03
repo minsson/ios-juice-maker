@@ -11,7 +11,6 @@ class InventoryViewController: ViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateFruitsCountLabels()
     }
     
     @IBAction func touchUpDismissButton(_ sender: UIButton) {
@@ -19,4 +18,11 @@ class InventoryViewController: ViewController {
     }
     
     
+    @IBAction func test(_ sender: UIStepper) {
+        
+        
+        juiceMaker.store.addInventoryByOne(of: .strawberry)
+        updateFruitsCountLabels()
+        print(sender.value)
+    }
 }
