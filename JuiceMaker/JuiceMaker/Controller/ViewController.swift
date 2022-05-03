@@ -18,28 +18,29 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateFruitsCountLabels()
     }
     
-    func updateInventory() {
+    func updateFruitsCountLabels() {
         strawberryCount.text = String(juiceMaker.store.fruitsInventory[.strawberry]!)
-        bananaCount.text = String(juiceMaker.store.fruitsInventory[.banana]!)
-        pineappleCount.text = String(juiceMaker.store.fruitsInventory[.pineapple]!)
-        kiwiCount.text = String(juiceMaker.store.fruitsInventory[.kiwi]!)
-        mangoCount.text = String(juiceMaker.store.fruitsInventory[.mango]!)
+        bananaCount.text = String(JuiceMaker.person.store.fruitsInventory[.banana]!)
+        pineappleCount.text = String(JuiceMaker.person.store.fruitsInventory[.pineapple]!)
+        kiwiCount.text = String(JuiceMaker.person.store.fruitsInventory[.kiwi]!)
+        mangoCount.text = String(JuiceMaker.person.store.fruitsInventory[.mango]!)
     }
     
     
-    func order(juice: JuiceMaker.Menu) {
+    private func order(juice: JuiceMaker.Menu) {
         do {
-            try juiceMaker.make(juice: juice)
+            try JuiceMaker.person.make(juice: juice)
             showSuccessAlert(message: "\(juice.rawValue) 나왔습니다! 맛있게 드세요!")
         } catch {
             showFailureAlert(message: "재료가 모자라요. 재고를 수정할까요?")
         }
-        updateInventory()
+        updateFruitsCountLabels()
     }
     
-    func showSuccessAlert(message: String) {
+    private func showSuccessAlert(message: String) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "고마워요 😘", style: .default)
         
@@ -47,7 +48,7 @@ class ViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func showFailureAlert(message: String) {
+    private func showFailureAlert(message: String) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         let yesAction = UIAlertAction(title: "예", style: .default) {
             (action) in 

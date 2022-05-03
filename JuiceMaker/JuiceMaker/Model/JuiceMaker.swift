@@ -6,7 +6,8 @@
 
 struct JuiceMaker {
     private(set) var store = FruitStore()
-        
+    static let person = JuiceMaker()
+    
     func make(juice: Menu) throws {
         let fruitsToUse = store.grabIngredients(of: juice.recipe)
         
