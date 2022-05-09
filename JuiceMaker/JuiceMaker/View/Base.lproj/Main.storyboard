@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DCG-dP-Fms">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DCG-dP-Fms">
     <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -279,12 +278,12 @@
             </objects>
             <point key="canvasLocation" x="240" y="900"/>
         </scene>
-        <!--재고 추가-->
+        <!--Inventory View Controller-->
         <scene sceneID="fkG-vv-hpE">
             <objects>
                 <viewController storyboardIdentifier="InventoryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Yu1-lM-nqp" customClass="InventoryViewController" customModule="JuiceMaker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tKV-4l-Vtc">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="370"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="aYL-25-ToK">
@@ -308,6 +307,9 @@
                                             </label>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ZQk-f4-zrz">
                                                 <rect key="frame" x="0.0" y="121" width="94" height="32"/>
+                                                <connections>
+                                                    <action selector="fruitsInventoryStepper:" destination="Yu1-lM-nqp" eventType="touchUpInside" id="e6I-9k-1lO"/>
+                                                </connections>
                                             </stepper>
                                         </subviews>
                                     </stackView>
@@ -399,17 +401,36 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9b-bX-DpP">
+                                <rect key="frame" x="770" y="77" width="30" height="30"/>
+                                <state key="normal" title="닫기"/>
+                                <connections>
+                                    <action selector="touchUpDismissButton:" destination="Yu1-lM-nqp" eventType="touchUpInside" id="XHW-zf-jvl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gcO-Xb-kNs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="aYL-25-ToK" firstAttribute="leading" secondItem="gcO-Xb-kNs" secondAttribute="leading" constant="20" id="1H2-ke-90y"/>
+                            <constraint firstItem="e9b-bX-DpP" firstAttribute="centerX" secondItem="w1F-9o-qJR" secondAttribute="centerX" id="4Xt-8g-x3C"/>
                             <constraint firstItem="aYL-25-ToK" firstAttribute="top" secondItem="gcO-Xb-kNs" secondAttribute="top" constant="100" id="Nh1-jv-ClV"/>
                             <constraint firstItem="gcO-Xb-kNs" firstAttribute="trailing" secondItem="aYL-25-ToK" secondAttribute="trailing" constant="20" id="XxW-oA-Nvq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="재고 추가" id="g4W-fY-l7r"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationItem key="navigationItem" id="g4W-fY-l7r"/>
+                    <connections>
+                        <outlet property="bananaInventoryLabel" destination="gKu-86-RhI" id="Uyz-G9-GtW"/>
+                        <outlet property="bananaInventoryStepper" destination="O5s-2N-3iP" id="upU-mS-07Z"/>
+                        <outlet property="kiwiInventoryLabel" destination="ZDv-1m-HBY" id="ayw-5P-eZv"/>
+                        <outlet property="kiwiInventoryStepper" destination="klA-59-Nu4" id="var-lb-e75"/>
+                        <outlet property="mangoInventoryLabel" destination="YJI-ER-LJR" id="mtP-OA-IDd"/>
+                        <outlet property="mangoInventoryStepper" destination="xbn-6P-grO" id="geB-xG-RRH"/>
+                        <outlet property="pineappleInventoryLabel" destination="MpT-VW-hCb" id="2A2-FM-yfT"/>
+                        <outlet property="pineappleInventoryStepper" destination="Rcr-xr-eqz" id="sWD-R4-8zh"/>
+                        <outlet property="strawberryInventoryLabel" destination="0yV-kn-zaT" id="4LU-wM-cGQ"/>
+                        <outlet property="strawberryInventoryStepper" destination="ZQk-f4-zrz" id="j0O-8h-aGV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ieh-6D-g1l" sceneMemberID="firstResponder"/>
             </objects>
@@ -418,6 +439,7 @@
         <!--Navigation Controller-->
         <scene sceneID="cAf-jL-tPK">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2s5-lS-967" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WwV-Td-3Bn" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ufw-7J-6hD">
@@ -429,7 +451,6 @@
                         <segue destination="Yu1-lM-nqp" kind="relationship" relationship="rootViewController" id="wH1-3A-cBm"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2s5-lS-967" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1636" y="-426"/>
         </scene>

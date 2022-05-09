@@ -25,7 +25,7 @@ class JuiceOrderViewController: UIViewController {
         super.viewDidLoad()
         updateFruitsInventoryLabels()
     }
-    
+
     func updateFruitsInventoryLabels() {
         let errorValue = 999
         strawberryInventoryLabel.text = String(JuiceMaker.shared.store.fruitsInventory[.strawberry] ?? errorValue)
